@@ -1,0 +1,41 @@
+{
+	"name": "spotlight",
+	"version": "1.0.0",
+	"description": "macOS-inspired Spotlight search app for Windows - quick actions and clipboard management",
+	"main": "src/main.js",
+	"scripts": {
+		"dev": "tinyjs dev",
+		"build": "tinyjs build",
+		"build:win": "tinyjs build --arch x64",
+		"build:mac": "tinyjs build --arch arm64",
+		"publish": "tinyjs publish",
+		"clean": "rm -rf dist .build",
+		"lint": "bunx @biomejs/biome lint --write --unsafe",
+		"test": "echo 'No tests configured yet'",
+		"check": "bunx @biomejs/biome check --write --unsafe"
+	},
+	"keywords": [
+		"spotlight",
+		"search",
+		"clipboard",
+		"quick-actions",
+		"calculator",
+		"converter",
+		"windows",
+		"tinyjs",
+		"desktop-app"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"tinyjs": "^0.50.1"
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"tinyjs": {
+		"name": "spotlight",
+		"config": "tinyjs.json"
+	}
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlight</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="spotlight-window" data-tiny-drag>
+    <!-- Search Bar -->
+    <header class="search-bar" data-tiny-drag>
+      <div class="search-icon-wrap" data-tiny-nodrag>
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7.5"/>
+          <line x1="21" y1="21" x2="16.5" y2="16.5"/>
+        </svg>
+      </div>
+
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Spotlight Search"
+        autocomplete="off"
+        spellcheck="false"
+        data-tiny-nodrag
+      />
+
+      <div class="search-actions" data-tiny-nodrag>
+        <button id="clearBtn" class="clear-btn" title="Clear input" style="display: none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <div id="hotkeyHint" class="shortcut-badge">Ctrl+Shift+Space</div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-body" id="contentBody">
+      <div id="resultsList" class="results-list"></div>
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <p class="empty-title">No results found</p>
+        <p class="empty-subtitle">Try searching for programs, math (e.g. 24 * 7), or quick actions</p>
+      </div>
+    </main>
+
+    <!-- Footer Status Bar -->
+    <footer class="footer-bar" data-tiny-drag>
+      <div class="footer-legend" data-tiny-nodrag>
+        <span class="legend-item"><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+        <span class="legend-item"><kbd>↵</kbd> Open / Run</span>
+        <span class="legend-item"><kbd>esc</kbd> Dismiss</span>
+      </div>
+      <div class="footer-brand" data-tiny-nodrag>Spotlight</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

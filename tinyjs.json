@@ -1,0 +1,38 @@
+{
+	"name": "spotlight",
+	"title": "Spotlight",
+	"id": "com.spotlight.app",
+	"version": "2.0.0",
+	"minTinyjsVersion": "0.50.1",
+	"icon": "icon.png",
+	"size": "720x460",
+	"activation": "accessory",
+	"readAccess": true,
+	"chrome": {
+		"frame": false,
+		"transparent": true,
+		"vibrancy": "under-window",
+		"windowControls": false,
+		"squareCorners": false,
+		"acceptsFirstMouse": true,
+		"menu": false
+	},
+	"windowPlacement": true,
+	"contextMenu": false,
+	"backend": "src/main.js",
+	"frontend": {
+		"dir": "src/frontend"
+	},
+	"windows": {
+		"chrome": {
+			"frame": false,
+			"transparent": true,
+			"vibrancy": "under-window",
+			"windowControls": false,
+			"squareCorners": false,
+			"acceptsFirstMouse": true,
+			"menu": false
+		}
+	},
+	"about": "menu"
+}
