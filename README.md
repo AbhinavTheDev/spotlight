@@ -1,6 +1,6 @@
-# 🔦 Spotlight - Quick Actions & Clipboard Manager
+# 🔦 Spotlight - Quick Actions
 
-A **macOS-inspired Spotlight** search app for **Windows**, built with **[tinyjs](https://tinyjs.app)**. Focused on **quick actions** and **clipboard management** - without the complexity of file search.
+A **macOS-inspired Spotlight** search app for **Windows**, built with **[tinyjs](https://tinyjs.app)**. Focused on **quick actions** - without the complexity of file search.
 
 ![Spotlight App Preview](https://img.shields.io/badge/Spotlight-Windows-blue?style=flat-square)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -10,20 +10,11 @@ A **macOS-inspired Spotlight** search app for **Windows**, built with **[tinyjs]
 
 ## ✨ Features
 
-### 📋 Clipboard History
-- **View** your clipboard history with timestamps
-- **Search** through past clipboard items
-- **Pin** frequently used items to the top
-- **Copy** items back to clipboard with one click
-- **Delete** individual items or clear all history
-- **Persistent** storage between app sessions
-
 ### ⚡ Quick Actions
 | Action | Example | Result |
 |--------|---------|--------|
 | 🧮 **Calculator** | `25 * 4 + 10` | `110` |
 | 📏 **Unit Conversion** | `10 ft to m` | `3.048 m` |
-| 💰 **Currency** | `100 USD to EUR` | `€92.00` |
 | 🕐 **Time Conversion** | `3pm EST to PST` | `12pm PST` |
 | 🔐 **Base64** | `base64 encode hello` | `aGVsbG8=` |
 | 🔗 **URL Shortener** | `https://long-url.com` | Shortened URL |
@@ -96,16 +87,9 @@ tinyjs build --arch x64
 │  QUICK ACTIONS                       │
 │  ┌─────────┐ ┌─────────┐          │
 │  │ 🧮 Calc │ │ 📏 Units │          │
-│  │ 💰 Curr │ │ 🔗 URL  │          │
+│  │  │ │ 🔗 URL  │          │
 │  └─────────┘ └─────────┘          │
 ├─────────────────────────────────────┤
-│  CLIPBOARD HISTORY                   🗑️│
-│  ┌─────────────────────────────────┐│
-│  │ 📋 Lorem ipsum dolor sit...    Pin ││
-│  │ 📋 Hello world from clipboard   Pin ││
-│  │ 📋 https://example.com          Pin ││
-│  └─────────────────────────────────┘│
-└─────────────────────────────────────┘
 ```
 
 ### Calculator
@@ -166,31 +150,6 @@ app.onHotkey('cmd+space', toggleWindow);
 
 ---
 
-## 📦 Project Structure
-
-```
-spotlight/
-├── tinyjs.json          # App configuration
-├── package.json         # Project metadata
-├── README.md            # This file
-├── icon.png             # App icon (1024x1024)
-├── vibe/
-│   └── session.md       # Development documentation
-├── src/
-│   ├── main.js          # Backend entry point
-│   ├── clipboard.js      # Clipboard manager
-│   ├── quickActions.js   # Quick actions engine
-│   └── frontend/
-│       ├── index.html   # Main HTML
-│       ├── app.js       # Frontend logic
-│       └── style.css    # Styles
-└── types/
-    ├── tiny.d.ts         # tinyjs types
-    └── tjs.d.ts          # txiki.js types
-```
-
----
-
 ## 🎯 Keyboard Shortcuts
 
 | Key | Action |
@@ -217,31 +176,6 @@ spotlight/
 - **[WebView2](https://docs.microsoft.com/en-us/microsoft-edge/webview2/)** - Windows webview
 - **Vanilla JavaScript** - No framework dependencies
 
-### Adding New Quick Actions
-
-1. Add to `src/quickActions.js`:
-
-```javascript
-// In the constructor
-this.actions.push(this.createAction('newAction', 'New Action', 'Description', this.newHandler, 'category'));
-
-// Add handler method
-async newHandler(query) {
-  return { result: 'processed result', formatted: 'Formatted Result' };
-}
-
-// Add detection method (optional)
-isNewAction(query) {
-  return /pattern/.test(query);
-}
-```
-
-2. Test with development mode:
-
-```bash
-tinyjs dev
-```
-
 ---
 
 ## 🐛 Troubleshooting
@@ -256,11 +190,6 @@ tinyjs --version
 # Check app configuration
 tinyjs dev --debug
 ```
-
-**Clipboard monitoring doesn't work:**
-- Ensure clipboard permission is granted in `tinyjs.json`
-- Check console logs for errors
-- Verify the app has proper permissions
 
 **Hotkey doesn't work:**
 - Check if another app is using the same hotkey
